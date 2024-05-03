@@ -56,7 +56,7 @@ const inputRef = useRef(null);
       };
   return (
     <div className=" flex justify-around items-center fixed bg-white top-0 z-10 w-[100%] h-[10%]  border-red-900 shadow-xl shadow-red-400">
-      <span className="text-red-950 font-bold text-3xl">Essentials</span>
+      <span className="text-red-950 font-bold text-3xl">Essentials(A comfy way to note)</span>
       <div className="relative">
         <input
           type="text"
