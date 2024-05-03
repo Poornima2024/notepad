@@ -1,6 +1,7 @@
 
 import React, { useState ,useRef} from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
+import ColorMarker from "./ColorMarker";
 const Header = ({ onValueChange }) => {
 //   const changeehandler = (e) => {
 //     // onValueChange=parseInt(e.target.value);
@@ -105,6 +106,7 @@ const inputRef = useRef(null);
         <option value="250%">250%</option>
         <option value="300%">300%</option>
       </select> */}
+      <ColorMarker></ColorMarker>
     </div>
   );
 };
