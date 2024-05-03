@@ -7,7 +7,7 @@ const ColorMarker = () => {
     })
   return (
     <div>
-      <button onClick={showcolor} className="relative">click for heighlight</button>
+      <button onClick={showcolor} className="relative">click for heighlight yatin</button>
       {color == true && (
         <div>
           <div className="grid grid-cols-4 grid-rows-4 ,absolute top-6 ">
