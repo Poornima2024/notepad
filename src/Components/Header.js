@@ -120,7 +120,8 @@
 import React, { useState ,useRef} from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
 import ColorMarker from "./ColorMarker";
-
+import { IoDownloadOutline } from "react-icons/io5";
+import html2pdf from 'html2pdf.js';
 const Header = ({ onValueChange ,colpass }) => {
 
   const handleColorChange = (col) => {
@@ -182,13 +183,23 @@ const inputRef = useRef(null);
           setListItem('');
         }
       };
+
+      const handleDownload = () => {
+        const element = document.getElementById("writing-area"); // The ID of the container element for your notepad content
+        html2pdf().from(element).save("notepad_content.pdf");
+      };
   return (
-    <div className=" flex justify-around items-center fixed bg-white top-0 z-10 w-[100%] h-[10%]  border-red-900 shadow-xl shadow-red-400">
-      <span className="text-red-950 font-bold sm:text-3xl sph:text-2xl">Essentials</span>
+    <div className=" flex justify-around items-center fixed top-0 z-10 w-[100%] h-[10%] bg-blue-950  border-blue-950 shadow-xl shadow-blue-400">
+   <div className="flex just">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScQM2Ykma-xy6o74DwK-PcnhMaQYifgcuGHCC5JcO2wOszMfyG1qH7D6Sd8an0QteTuWk&usqp=CAU"
+      className="w-[10%]  object-cover "
+    />
+      <span className=" text-green-600  font-bold sm:text-3xl sph:text-2xl self-baseline items-baseline ">ssentials</span>
+      </div>
       <div className="relative sph:w-[20%] sm:w-auto">
         <input
           type="text"
-          className="w-[100%] h-[90%] border-4 border-red-950"
+          className="w-[100%] h-[90%] border-4 border-emerald-600"
           value={inputValue ||listItem}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
@@ -235,10 +246,15 @@ const inputRef = useRef(null);
         <option value="250%">250%</option>
         <option value="300%">300%</option>
       </select> */}
-
+     
       <ColorMarker colpass={handleColorChange} ></ColorMarker>
+      <div>
+      <IoDownloadOutline onClick={handleDownload} className="h-[0%] w-[200%] text-white" />
+      </div>
+      
     </div>
   );
 };
 
 export default Header;
+
