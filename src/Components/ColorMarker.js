@@ -19,7 +19,7 @@ const ColorMarker = ({colpass}) => {
     <div>
       {/* <button onClick={showcolor} className="relative"></button> */}
       <PiHighlighter onClick={showcolor}  className="h-[0%] w-[200%] text-white" style={{color: selectedColor }} />
-      {color == true && (
+      {color === true && (
         <div >
           <div className="grid grid-cols-4 grid-rows-4 absolute top-7 h-[254%] w-[10%] mt-[1%] ">
             <div className="bg-purple-500" onClick={()=>Markercol("purple")}>&nbsp;</div>

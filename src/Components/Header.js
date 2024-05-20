@@ -120,8 +120,8 @@
 import React, { useState ,useRef} from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
 import ColorMarker from "./ColorMarker";
-import { IoDownloadOutline } from "react-icons/io5";
-import html2pdf from 'html2pdf.js';
+//import { IoDownloadOutline } from "react-icons/io5";
+//import html2pdf from 'html2pdf.js';
 const Header = ({ onValueChange ,colpass }) => {
 
   const handleColorChange = (col) => {
@@ -184,10 +184,10 @@ const inputRef = useRef(null);
         }
       };
 
-      const handleDownload = () => {
-        const element = document.getElementById("writing-area"); // The ID of the container element for your notepad content
-        html2pdf().from(element).save("notepad_content.pdf");
-      };
+      // const handleDownload = () => {
+      //   const element = document.getElementById("writing-area"); // The ID of the container element for your notepad content
+      //   html2pdf().from(element).save("notepad_content.pdf");
+      // };
   return (
     <div className=" flex justify-around items-center fixed top-0 z-10 w-[100%] h-[10%] bg-blue-950  border-blue-950 shadow-xl shadow-blue-400">
    <div className="flex just">
@@ -209,7 +209,7 @@ const inputRef = useRef(null);
           className="absolute top-2 right-2 cursor-pointer"
           onClick={dropclick}
         />
-         {list == true && (
+         {list === true && (
         <div className="absolute top-full right-0 bg-white border border-gray-300">
           <ul className="w-[100%] h-[50%] border-4  cursor-pointer ">
           
@@ -249,7 +249,7 @@ const inputRef = useRef(null);
      
       <ColorMarker colpass={handleColorChange} ></ColorMarker>
       <div>
-      <IoDownloadOutline onClick={handleDownload} className="h-[0%] w-[200%] text-white" />
+      {/* <IoDownloadOutline onClick={handleDownload} className="h-[0%] w-[200%] text-white" /> */}
       </div>
       
     </div>
